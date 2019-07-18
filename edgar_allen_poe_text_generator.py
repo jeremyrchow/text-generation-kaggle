@@ -5,6 +5,9 @@
 # Jeremy Chow
 # 7/19/2019
 
+# Instructions:
+# Execute in command line by running the following:
+# `python edgar_allen_poe_text_generator.py ["words to start generating from"] [amount of words to generate]`
 
 # Commandline arg parsing
 import sys
@@ -22,7 +25,7 @@ from tensorflow.keras.layers import Embedding
 
 from pickle import load
 
-# Define model
+# Define model. See notebook for explanation.
 def load_text_gen_model():
 	vocab_size = 15713
 	train_len = 19

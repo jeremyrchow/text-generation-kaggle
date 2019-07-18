@@ -15,3 +15,11 @@ Goal: Generate text in the style of Edgar Allen Poe, specifically emulating his 
 3. Dense (regression) layer with ReLU activation
 4. Dense layer with Softmax activation 
     - Outputs word probability across entire vocab
+
+# Example Output:
+
+**Input:** `First of all I dismembered the corpse`
+
+**Model:**
+
+"First of all i dismembered the corpse which is profound since in the first place he appeared at first so suddenly as any matter no answer was impossible to find my sake he now happened to be sure it was he suspected or caution or gods and some voice held forth upon
