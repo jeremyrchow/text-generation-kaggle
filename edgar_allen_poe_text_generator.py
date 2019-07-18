@@ -1,5 +1,11 @@
 
 #!/usr/bin/env python
+# edgar_allen_poe_text_generator.py
+
+# Jeremy Chow
+# 7/19/2019
+
+
 # Commandline arg parsing
 import sys
 # Standard manipulations
@@ -34,8 +40,11 @@ def load_text_gen_model():
 def gen(seq,max_len = 20):
     ''' Generates a sequence given a string seq using specified model until the total sequence length
     reaches max_len'''
+    model = load_text_gen_model()
+    model.load_weights('models/model_3_weights_colab.hdf5')
+    print("Output: ")
     # Tokenize the input string
-    with open("tokenizer.pkl", "rb") as f:
+    with open("models/tokenizer.pkl", "rb") as f:
     	tokenizer = load(f)
     reverse_word_map = dict(map(reversed, tokenizer.word_index.items()))
     tokenized_sent = tokenizer.texts_to_sequences([seq])
@@ -50,15 +59,18 @@ def gen(seq,max_len = 20):
         
     return " ".join(map(lambda x : reverse_word_map[x],tokenized_sent[0]))
 def process_input(user_input):
-	if not isinstance(user_input,str):
+	if len(user_input) == 1:
+		print('Script takes form: edgar_allen_poe_text_generator.py [string] [number_of_words_to_predict]')
+		return
+	if not isinstance(user_input[1],str):
 		print("Not a string!")
+		return
+	if len(user_input)>2:
+		print(gen(user_input,int(user_input[2])))
 	else:
 		print(gen(user_input))
-	pass
+
 
 if __name__ == "__main__":
-	model = load_text_gen_model()
-
-	model.load_weights('model_3_weights_colab.hdf5')
-
-	process_input(sys.argv[1])
+	
+	process_input(sys.argv)
