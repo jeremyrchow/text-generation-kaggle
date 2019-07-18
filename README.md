@@ -22,4 +22,4 @@ Goal: Generate text in the style of Edgar Allen Poe, specifically emulating his 
 
 **Model:**
 
-"First of all i dismembered the corpse which is profound since in the first place he appeared at first so suddenly as any matter no answer was impossible to find my sake he now happened to be sure it was he suspected or caution or gods and some voice held forth upon
+"First of all i dismembered the corpse which is profound since in the first place he appeared at first so suddenly as any matter no answer was impossible to find my sake he now happened to be sure it was he suspected or caution or gods and some voice held forth upon"
